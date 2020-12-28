@@ -1,10 +1,13 @@
 package com.starter;
 
 import com.starter.conditions.ConditionalOnProduction;
+import com.starter.properties.PropertiesExample;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@EnableConfigurationProperties(PropertiesExample.class)
 public class StarterConfiguration {
 
   /*  @Bean
