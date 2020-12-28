@@ -15,7 +15,7 @@
     </properties>
 
     <groupId>com.starter</groupId>
-    <artifactId>starter</artifactId>
+    <artifactId>retry</artifactId>
     <version>1.0.0</version>
 
     <dependencies>

@@ -1,5 +1,6 @@
 package com.starter;
 
+import com.starter.conditions.ConditionalOnProduction;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -14,6 +15,12 @@ public class StarterConfiguration {
     @Bean
     public RetryAOP getRetryAOP() {
         return new RetryAOP();
+    }
+
+    @Bean
+    @ConditionalOnProduction
+    public ProductionNotifier getProductionNotifier(){
+        return new ProductionNotifier();
     }
 
 }
