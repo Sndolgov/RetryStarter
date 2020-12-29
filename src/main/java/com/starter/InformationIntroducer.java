@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.PostConstruct;
 
-public class ProductionNotifier
+public class InformationIntroducer
 {
     @Autowired
     private PropertiesExample properties;

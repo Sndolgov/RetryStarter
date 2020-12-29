@@ -1,14 +1,15 @@
 package com.starter;
 
+import com.starter.conditions.CompositeConditionalOnProduction;
 import com.starter.conditions.ConditionalOnProduction;
 import com.starter.properties.PropertiesExample;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@EnableConfigurationProperties(PropertiesExample.class)
+@EnableConfigurationProperties({PropertiesExample.class})
 public class StarterConfiguration {
 
   /*  @Bean
@@ -22,10 +23,14 @@ public class StarterConfiguration {
     }
 
     @Bean
+    // @ConditionalOnProperty is not repeatable annotation
+//    @ConditionalOnProperty("info.previous-versions")
+    @CompositeConditionalOnProduction
+    @ConditionalOnMissingBean(name = "informationIntroducer")
     @ConditionalOnProduction
-    @ConditionalOnProperty("info.previous-versions")
-    public ProductionNotifier getProductionNotifier(){
-        return new ProductionNotifier();
+//    @ConditionalOnMissingBean(InformationIntroducer.class)
+    public InformationIntroducer getProductionNotifier(){
+        return new InformationIntroducer();
     }
 
 }

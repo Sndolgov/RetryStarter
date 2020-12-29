@@ -10,4 +10,5 @@ import java.util.List;
 public class PropertiesExample
 {
     private List<String> previousVersions;
+    private boolean enabled;
 }
