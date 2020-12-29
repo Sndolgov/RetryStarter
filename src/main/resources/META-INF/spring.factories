@@ -1,1 +1,3 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.starter.StarterConfiguration
+org.springframework.context.ApplicationContextInitializer =com.starter.profiles.ProfileCheckerContextInitializer
+org.springframework.boot.env.EnvironmentPostProcessor=com.starter.profiles.ProfileDetectorEPP

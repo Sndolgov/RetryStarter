@@ -22,6 +22,7 @@ public class RetryAOP
         Throwable throwable = new Throwable("tries <= 0");
         while (currentTry < tries)
         {
+            System.out.println("Attempt number: " + (currentTry + 1));
             try
             {
                 return proceedingJoinPoint.proceed();
